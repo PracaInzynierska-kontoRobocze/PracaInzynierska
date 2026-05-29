@@ -1,0 +1,69 @@
+[gd_scene load_steps=4 format=3 uid="uid://dokb6ydpkoll4"]
+
+[ext_resource type="PackedScene" uid="uid://b8tdxpjtkjar5" path="res://sceny/elementy/Mapa/yellow_kwadrat.tscn" id="1_wuih5"]
+[ext_resource type="Texture2D" uid="uid://baufdd8dy1pke" path="res://assety/grafika/obiekty/kosmos/galaktyki/Orapericus.png" id="2_2webk"]
+[ext_resource type="Texture2D" uid="uid://b3ejhqj46em3f" path="res://assety/grafika/tła/space.jpg" id="3_2webk"]
+
+[node name="Orapericus" type="Node2D"]
+
+[node name="Lokalizacja" parent="." instance=ExtResource("1_wuih5")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 400.0
+offset_top = 500.0
+offset_right = 400.0
+offset_bottom = 500.0
+grow_horizontal = 1
+grow_vertical = 1
+metadata/Lokalizacja = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -4
+position = Vector2(647.5, 364)
+scale = Vector2(0.897917, 0.759625)
+texture = ExtResource("2_2webk")
+
+[node name="Tlo" type="Sprite2D" parent="."]
+z_index = -5
+position = Vector2(642.5, 350.5)
+scale = Vector2(1.2998, 0.820594)
+texture = ExtResource("3_2webk")
+
+[node name="Tlo" type="Sprite2D" parent="Tlo"]
+z_index = -11
+position = Vector2(78.089, -24.3726)
+scale = Vector2(2.71827, 2.36611)
+
+[node name="Lokalizacja2" parent="." instance=ExtResource("1_wuih5")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 688.0
+offset_top = 100.0
+offset_right = 688.0
+offset_bottom = 100.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="Lokalizacja3" parent="." instance=ExtResource("1_wuih5")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 952.0
+offset_top = 322.0
+offset_right = 952.0
+offset_bottom = 322.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="Lokalizacja4" parent="." instance=ExtResource("1_wuih5")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 589.0
+offset_top = 271.0
+offset_right = 589.0
+offset_bottom = 271.0
+grow_horizontal = 1
+grow_vertical = 1

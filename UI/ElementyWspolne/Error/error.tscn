@@ -1,0 +1,42 @@
+[gd_scene load_steps=2 format=3 uid="uid://j3w4l08gasx0"]
+
+[ext_resource type="Script" uid="uid://ct3gf6sokydp1" path="res://UI/ElementyWspolne/Error/UIError.cs" id="1_4u5nh"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 278.0
+offset_top = 110.0
+offset_right = -786.0
+offset_bottom = -440.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+script = ExtResource("1_4u5nh")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 2
+offset_left = -3.0
+offset_top = -3.0
+offset_right = 214.0
+offset_bottom = 170.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 9.0
+offset_right = 211.0
+offset_bottom = 164.0
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 193.0
+offset_top = -3.0
+offset_right = 211.0
+offset_bottom = 28.0
+text = "X"
+
+[connection signal="pressed" from="Button" to="." method="Close"]

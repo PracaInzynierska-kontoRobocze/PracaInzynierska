@@ -1,0 +1,78 @@
+[gd_scene load_steps=2 format=3 uid="uid://b5gq5rxprxml2"]
+
+[ext_resource type="Script" uid="uid://csmrmtsst8w3v" path="res://global/skrypty/MenuEsc.cs" id="1_xal5v"]
+
+[node name="MenuEscLayer" type="CanvasLayer"]
+layer = 100
+
+[node name="MenuEsc" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_top = -30.0
+offset_bottom = -30.0
+focus_mode = 2
+mouse_filter = 2
+script = ExtResource("1_xal5v")
+
+[node name="Panel" type="Panel" parent="MenuEsc"]
+layout_mode = 0
+offset_left = 500.0
+offset_top = 195.0
+offset_right = 780.0
+offset_bottom = 620.0
+
+[node name="Wznów" type="Button" parent="MenuEsc"]
+layout_mode = 0
+offset_left = 535.0
+offset_top = 220.0
+offset_right = 750.0
+offset_bottom = 270.0
+text = "Wznów"
+
+[node name="Mapa" type="Button" parent="MenuEsc"]
+layout_mode = 0
+offset_left = 535.0
+offset_top = 350.0
+offset_right = 750.0
+offset_bottom = 400.0
+text = "Powrót do mapy
+"
+
+[node name="Ustawienia" type="Button" parent="MenuEsc"]
+layout_mode = 0
+offset_left = 535.0
+offset_top = 285.0
+offset_right = 750.0
+offset_bottom = 335.0
+text = "Ustawienia"
+
+[node name="MenuGlowne" type="Button" parent="MenuEsc"]
+layout_mode = 0
+offset_left = 535.0
+offset_top = 415.0
+offset_right = 750.0
+offset_bottom = 465.0
+text = "Menu główne"
+
+[node name="Pomoc" type="Button" parent="MenuEsc"]
+layout_mode = 0
+offset_left = 535.0
+offset_top = 480.0
+offset_right = 750.0
+offset_bottom = 530.0
+text = "Pomoc"
+
+[node name="Wyjdz" type="Button" parent="MenuEsc"]
+layout_mode = 0
+offset_left = 535.0
+offset_top = 545.0
+offset_right = 750.0
+offset_bottom = 595.0
+text = "Wyjdź"
+
+[connection signal="pressed" from="MenuEsc/Wznów" to="MenuEsc" method="OnWznowPressed"]
+[connection signal="pressed" from="MenuEsc/Mapa" to="MenuEsc" method="OnMapaPressed"]
+[connection signal="pressed" from="MenuEsc/Ustawienia" to="MenuEsc" method="OnUstawieniaPressed"]
+[connection signal="pressed" from="MenuEsc/MenuGlowne" to="MenuEsc" method="OnMenuGlownePressed"]
+[connection signal="pressed" from="MenuEsc/Pomoc" to="MenuEsc" method="OnPomocPressed"]
+[connection signal="pressed" from="MenuEsc/Wyjdz" to="MenuEsc" method="OnWyjdzPressed"]

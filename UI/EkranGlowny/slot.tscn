@@ -1,0 +1,161 @@
+[gd_scene load_steps=7 format=3 uid="uid://shokphit44vt"]
+
+[ext_resource type="Script" uid="uid://b6mnxgkw6pahm" path="res://global/skrypty/dane/Zapis/Slot.cs" id="1_v1c67"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_slot_hover"]
+bg_color = Color(0, 0.15, 0.25, 0.95)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 1, 1, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+shadow_color = Color(0, 1, 1, 0.3)
+shadow_size = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_slot_normal"]
+bg_color = Color(0.04, 0.06, 0.1, 0.8)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0.4, 0.5, 0.8)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_panel"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_del_hover"]
+bg_color = Color(0.9, 0.1, 0.1, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 0.5, 0.5, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+shadow_color = Color(1, 0.2, 0.2, 0.6)
+shadow_size = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_del_normal"]
+bg_color = Color(0.2, 0.05, 0.05, 0.9)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.8, 0.2, 0.2, 0.6)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[node name="Slot" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_v1c67")
+metadata/Slot = ""
+
+[node name="Button" type="Button" parent="."]
+z_index = 5
+layout_mode = 0
+offset_left = 72.0
+offset_top = 142.0
+offset_right = 312.0
+offset_bottom = 559.0
+theme_override_styles/hover = SubResource("StyleBoxFlat_slot_hover")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_slot_hover")
+theme_override_styles/normal = SubResource("StyleBoxFlat_slot_normal")
+
+[node name="Panel" type="Panel" parent="Button"]
+z_index = -5
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_panel")
+
+[node name="Nazwa" type="Label" parent="Button/Panel"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 20.0
+offset_bottom = 45.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 1, 1, 1)
+theme_override_constants/outline_size = 2
+text = "NAZWA ZAPISU"
+horizontal_alignment = 1
+
+[node name="Data" type="Label" parent="Button/Panel"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 50.0
+offset_bottom = 75.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.6, 0.7, 0.8, 1)
+text = "Brak danych"
+horizontal_alignment = 1
+
+[node name="Poziomy" type="Label" parent="Button/Panel"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = -70.0
+offset_right = 175.0
+offset_bottom = -47.0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.8, 0.9, 1, 1)
+text = "Poziom: -"
+
+[node name="Czas" type="Label" parent="Button/Panel"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = -40.0
+offset_right = 175.0
+offset_bottom = -17.0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.8, 0.9, 1, 1)
+text = "Czas: -"
+
+[node name="PrzyciskUsun" type="Button" parent="Button"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -40.0
+offset_right = -10.0
+offset_bottom = -10.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 0.4, 0.4, 1)
+theme_override_styles/hover = SubResource("StyleBoxFlat_del_hover")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_del_hover")
+theme_override_styles/normal = SubResource("StyleBoxFlat_del_normal")
+text = "X"
+
+[connection signal="pressed" from="Button" to="." method="OnSlotPressed"]
+[connection signal="pressed" from="Button/PrzyciskUsun" to="." method="DeleteSlot"]

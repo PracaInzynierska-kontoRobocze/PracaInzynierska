@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://dgwtym7jlkaww"]
+
+[ext_resource type="Script" uid="uid://jt213wp10p8q" path="res://sceny/przeciwnicy/Sonda/Sonda.cs" id="1_klim2"]
+[ext_resource type="Texture2D" uid="uid://ddfwv6tpcnbpv" path="res://assety/grafika/obiekty/przeciwnicy/satelita.png" id="2_em5sf"]
+
+[node name="Sonda" type="CharacterBody2D"]
+script = ExtResource("1_klim2")
+metadata/Nazwa = "UszkodzonaSonda"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(9, 78)
+scale = Vector2(0.695, 1.084)
+texture = ExtResource("2_em5sf")
+
+[node name="Button" type="Button" parent="."]
+modulate = Color(0.00392157, 0.00392157, 0.00392157, 0)
+offset_left = -133.0
+offset_top = -66.0
+offset_right = 149.0
+offset_bottom = 198.0
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

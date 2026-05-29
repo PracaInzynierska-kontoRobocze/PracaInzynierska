@@ -1,0 +1,51 @@
+[gd_scene load_steps=10 format=3 uid="uid://wx4mw5k35l85"]
+
+[ext_resource type="PackedScene" uid="uid://7dde8h4c5xpp" path="res://global/sceny/LokalizacjaWalka.tscn" id="1_sb2cv"]
+[ext_resource type="Script" uid="uid://b4tvun8dlcg1w" path="res://sceny/lokalizacje/Orapericus/Orapericus1/Orapericus1_4/Orapericus1_4.cs" id="2_ngild"]
+[ext_resource type="Texture2D" uid="uid://b3ejhqj46em3f" path="res://assety/grafika/tła/space.jpg" id="3_yxem3"]
+[ext_resource type="Texture2D" uid="uid://3ql8tnhrf5ob" path="res://assety/grafika/obiekty/kosmos/obiekty_kosmos/sun.png" id="4_phedo"]
+[ext_resource type="Texture2D" uid="uid://dq6jghoek0fak" path="res://assety/grafika/obiekty/kosmos/obiekty_kosmos/planet0.png" id="5_7t7ho"]
+[ext_resource type="Texture2D" uid="uid://tch0seeawvs4" path="res://assety/grafika/obiekty/kosmos/obiekty_kosmos/planet1.png" id="6_3vayo"]
+[ext_resource type="PackedScene" uid="uid://ydosyfwrqhhd" path="res://sceny/przeciwnicy/StatekZwiadowczy/StatekZwiadowczy.tscn" id="7_robdx"]
+[ext_resource type="PackedScene" uid="uid://h331selutk3y" path="res://sceny/przeciwnicy/StatekObronny/StatekObronny.tscn" id="8_ls6np"]
+[ext_resource type="PackedScene" uid="uid://bi0r2t7jbqbpf" path="res://sceny/przeciwnicy/Stacja/Stacja.tscn" id="9_0yyh7"]
+
+[node name="LokalizacjaWalka" instance=ExtResource("1_sb2cv")]
+script = ExtResource("2_ngild")
+metadata/Lokalizacja = 5
+
+[node name="Tło" parent="." index="0"]
+position = Vector2(653, 358)
+scale = Vector2(1.36914, 0.864119)
+texture = ExtResource("3_yxem3")
+
+[node name="Tło2" parent="." index="1"]
+position = Vector2(664, 441)
+scale = Vector2(4.70898, 4.48659)
+texture = ExtResource("3_yxem3")
+
+[node name="slonce" type="Sprite2D" parent="." index="4"]
+position = Vector2(81, 73)
+scale = Vector2(0.315, 0.315)
+texture = ExtResource("4_phedo")
+
+[node name="planeta" type="Sprite2D" parent="." index="5"]
+position = Vector2(1038, 130)
+rotation = 1.06291
+scale = Vector2(0.22, 0.22)
+texture = ExtResource("5_7t7ho")
+
+[node name="planeta2" type="Sprite2D" parent="." index="6"]
+position = Vector2(1183, 617)
+rotation = 1.06291
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("6_3vayo")
+
+[node name="StatekZwiadowczy" parent="." index="7" instance=ExtResource("7_robdx")]
+position = Vector2(899, 304)
+
+[node name="StatekObronny" parent="." index="8" instance=ExtResource("8_ls6np")]
+position = Vector2(1011, 452)
+
+[node name="Stacja" parent="." index="9" instance=ExtResource("9_0yyh7")]
+position = Vector2(1159, 353)

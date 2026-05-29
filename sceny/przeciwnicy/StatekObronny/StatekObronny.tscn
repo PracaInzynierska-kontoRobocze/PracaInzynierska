@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://h331selutk3y"]
+
+[ext_resource type="Script" uid="uid://doneuil21f2i1" path="res://sceny/przeciwnicy/StatekObronny/StatekObronny.cs" id="1_25odj"]
+[ext_resource type="Texture2D" uid="uid://cbee24jjmxcru" path="res://assety/grafika/obiekty/przeciwnicy/spaceship2.png" id="2_jbxl2"]
+
+[node name="StatekObronny" type="CharacterBody2D"]
+script = ExtResource("1_25odj")
+metadata/Nazwa = "StatekObronny"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(9, 78)
+rotation = -1.5708
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_jbxl2")
+
+[node name="Button" type="Button" parent="."]
+modulate = Color(0.00392157, 0.00392157, 0.00392157, 0)
+offset_left = -82.0
+offset_top = 15.0
+offset_right = 102.0
+offset_bottom = 138.0
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

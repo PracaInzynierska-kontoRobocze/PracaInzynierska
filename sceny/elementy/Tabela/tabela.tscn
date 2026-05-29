@@ -1,0 +1,154 @@
+[gd_scene load_steps=3 format=3 uid="uid://bqmmncss0xa1m"]
+
+[ext_resource type="Script" uid="uid://ckqguk06damj7" path="res://sceny/elementy/Tabela/Tabela.cs" id="1_ecf3n"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dstx2"]
+
+[node name="TabelaWrapper" type="Control"]
+z_index = 5
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 368.0
+offset_top = 185.0
+offset_right = -411.0
+offset_bottom = -249.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ecf3n")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 70.0
+offset_right = -10.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GridContainer" type="GridContainer" parent="Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+columns = 2
+
+[node name="NazwaTabeli" type="LineEdit" parent="Panel"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 110.0
+offset_top = 25.0
+offset_right = -110.0
+offset_bottom = 60.0
+grow_horizontal = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_styles/focus = SubResource("StyleBoxEmpty_dstx2")
+text = "NAZWA TABELI"
+alignment = 1
+editable = false
+flat = true
+
+[node name="Lewo" type="Button" parent="Panel"]
+z_index = 5
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 90.0
+offset_bottom = 70.0
+text = "<"
+
+[node name="Prawo" type="Button" parent="Panel"]
+z_index = 5
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -90.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = 70.0
+grow_horizontal = 0
+text = ">"
+
+[node name="Panel2" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 302.0
+offset_bottom = 229.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 70.0
+offset_right = -10.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GridContainer" type="GridContainer" parent="Panel2/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+columns = 2
+
+[node name="NazwaTabeli" type="LineEdit" parent="Panel2"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 110.0
+offset_top = 25.0
+offset_right = -110.0
+offset_bottom = 60.0
+grow_horizontal = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_styles/focus = SubResource("StyleBoxEmpty_dstx2")
+text = "PROCEDURY"
+alignment = 1
+editable = false
+flat = true
+
+[node name="Lewo" type="Button" parent="Panel2"]
+z_index = 5
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 90.0
+offset_bottom = 70.0
+text = "<"
+
+[node name="Prawo" type="Button" parent="Panel2"]
+z_index = 5
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -90.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = 70.0
+grow_horizontal = 0
+text = ">"
+
+[connection signal="pressed" from="Panel/Lewo" to="." method="OpenPrev"]
+[connection signal="pressed" from="Panel/Prawo" to="." method="OpenNext"]
+[connection signal="pressed" from="Panel2/Lewo" to="." method="OpenPrevProc"]
+[connection signal="pressed" from="Panel2/Prawo" to="." method="OpenNextProc"]

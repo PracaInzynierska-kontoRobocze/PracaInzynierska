@@ -1,0 +1,76 @@
+[gd_scene load_steps=4 format=3 uid="uid://b5sacjs2s14ty"]
+
+[ext_resource type="Script" uid="uid://dnd86o7l6ak8h" path="res://UI/Mapa/Mapa.cs" id="1_he28m"]
+[ext_resource type="Texture2D" uid="uid://b3ejhqj46em3f" path="res://assety/grafika/tła/space.jpg" id="2_he28m"]
+[ext_resource type="Texture2D" uid="uid://bnb8oup6mked4" path="res://assety/grafika/elementy/strzalka_glow.png" id="3_he28m"]
+
+[node name="Mapa" type="Node2D"]
+script = ExtResource("1_he28m")
+
+[node name="Tło" type="Sprite2D" parent="."]
+position = Vector2(634.5, 360)
+scale = Vector2(1.26855, 0.794055)
+texture = ExtResource("2_he28m")
+
+[node name="NazwaGalaktyki" type="Label" parent="."]
+offset_left = 550.0
+offset_top = 26.0
+offset_right = 736.0
+offset_bottom = 76.0
+text = "Temp nazwa galaktyki"
+
+[node name="Galaktyki" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 200.0
+offset_top = 85.0
+offset_right = 1050.0
+offset_bottom = 610.0
+
+[node name="GalaktykaA" type="TextureRect" parent="Galaktyki"]
+layout_mode = 0
+offset_right = 850.0
+offset_bottom = 525.0
+expand_mode = 1
+
+[node name="GalaktykaB" type="TextureRect" parent="Galaktyki"]
+layout_mode = 0
+offset_right = 850.0
+offset_bottom = 525.0
+expand_mode = 1
+
+[node name="Button2" type="Button" parent="."]
+offset_left = 540.0
+offset_top = 659.0
+offset_right = 714.0
+offset_bottom = 706.0
+text = "Wybierz"
+
+[node name="Prawo" type="TextureButton" parent="."]
+offset_left = 1200.0
+offset_top = 320.0
+offset_right = 1280.0
+offset_bottom = 400.0
+texture_normal = ExtResource("3_he28m")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Lewo" type="TextureButton" parent="."]
+offset_top = 320.0
+offset_right = 80.0
+offset_bottom = 400.0
+texture_normal = ExtResource("3_he28m")
+ignore_texture_size = true
+stretch_mode = 0
+flip_h = true
+
+[node name="Tło2" type="Sprite2D" parent="."]
+show_behind_parent = true
+z_index = -1
+position = Vector2(597.5, 355.5)
+scale = Vector2(2.97363, 1.94586)
+texture = ExtResource("2_he28m")
+
+[connection signal="pressed" from="Button2" to="." method="WybierzGalaktykę"]
+[connection signal="pressed" from="Prawo" to="." method="_on_prawo_pressed"]
+[connection signal="pressed" from="Lewo" to="." method="_on_lewo_pressed"]

@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://bi0r2t7jbqbpf"]
+
+[ext_resource type="Script" uid="uid://4xuuu4vrdcqo" path="res://sceny/przeciwnicy/Stacja/Stacja.cs" id="1_2bgu7"]
+[ext_resource type="Texture2D" uid="uid://dx4s3p104wrsl" path="res://assety/grafika/obiekty/przeciwnicy/energyspaceship.png" id="2_brv2x"]
+
+[node name="Stacja" type="CharacterBody2D"]
+script = ExtResource("1_2bgu7")
+metadata/Nazwa = "Stacja"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(9, 78)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_brv2x")
+
+[node name="Button" type="Button" parent="."]
+modulate = Color(0.00392157, 0.00392157, 0.00392157, 0)
+offset_left = -52.0
+offset_top = -1.0
+offset_right = 73.0
+offset_bottom = 153.0
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

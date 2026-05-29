@@ -1,0 +1,84 @@
+[gd_resource type="Theme" load_steps=7 format=3 uid="uid://bbb4fve753tdp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sql_hover"]
+bg_color = Color(0, 1, 1, 0.05)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 1, 1, 0.4)
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sql_normal"]
+content_margin_left = 15.0
+content_margin_top = 10.0
+content_margin_right = 15.0
+content_margin_bottom = 10.0
+bg_color = Color(0, 0.08, 0.12, 0.7)
+border_width_left = 4
+border_color = Color(0, 0.4, 0.5, 1)
+corner_detail = 1
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_separator"]
+color = Color(0, 1, 1, 0.2)
+thickness = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sql_focus"]
+content_margin_left = 15.0
+content_margin_top = 10.0
+content_margin_right = 15.0
+content_margin_bottom = 10.0
+bg_color = Color(0, 0.15, 0.2, 0.8)
+border_width_left = 5
+border_width_bottom = 2
+border_color = Color(0, 1, 1, 1)
+shadow_color = Color(0, 1, 1, 0.1)
+shadow_size = 12
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_terminal_bg"]
+content_margin_left = 10.0
+content_margin_top = 35.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.01, 0.02, 0.03, 0.95)
+border_width_top = 25
+border_color = Color(0, 0.4, 0.5, 0.5)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+shadow_color = Color(0, 0, 0, 0.8)
+shadow_size = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_popup_terminal"]
+bg_color = Color(0.02, 0.05, 0.08, 0.98)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 1, 1, 0.5)
+shadow_size = 15
+
+[resource]
+BoxContainer/constants/separation = 20
+Button/colors/font_color = Color(0, 1, 1, 0.8)
+Button/colors/font_hover_color = Color(1, 1, 1, 1)
+Button/styles/hover = SubResource("StyleBoxFlat_sql_hover")
+Button/styles/normal = SubResource("StyleBoxFlat_sql_normal")
+HSeparator/styles/separator = SubResource("StyleBoxLine_separator")
+LineEdit/colors/font_color = Color(0.3, 1, 0.5, 1)
+LineEdit/colors/selection_color = Color(0, 1, 1, 0.4)
+LineEdit/font_sizes/font_size = 14
+LineEdit/styles/focus = SubResource("StyleBoxFlat_sql_focus")
+LineEdit/styles/normal = SubResource("StyleBoxFlat_sql_normal")
+OptionButton/colors/font_color = Color(0, 1, 1, 1)
+OptionButton/styles/hover = SubResource("StyleBoxFlat_sql_hover")
+OptionButton/styles/normal = SubResource("StyleBoxFlat_sql_normal")
+Panel/styles/panel = SubResource("StyleBoxFlat_terminal_bg")
+PopupMenu/styles/hover = SubResource("StyleBoxFlat_sql_hover")
+PopupMenu/styles/panel = SubResource("StyleBoxFlat_popup_terminal")
+TextEdit/colors/font_color = Color(0.3, 1, 0.5, 1)
+TextEdit/styles/focus = SubResource("StyleBoxFlat_sql_focus")
+TextEdit/styles/normal = SubResource("StyleBoxFlat_sql_normal")

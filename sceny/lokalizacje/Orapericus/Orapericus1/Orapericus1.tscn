@@ -1,0 +1,67 @@
+[gd_scene load_steps=6 format=3 uid="uid://dtlruivp7tvmh"]
+
+[ext_resource type="Texture2D" uid="uid://b3ejhqj46em3f" path="res://assety/grafika/tła/space.jpg" id="1_23x6q"]
+[ext_resource type="PackedScene" uid="uid://b8tdxpjtkjar5" path="res://sceny/elementy/Mapa/yellow_kwadrat.tscn" id="2_nle2k"]
+[ext_resource type="Texture2D" uid="uid://3ql8tnhrf5ob" path="res://assety/grafika/obiekty/kosmos/obiekty_kosmos/sun.png" id="3_adbm6"]
+[ext_resource type="Texture2D" uid="uid://dq6jghoek0fak" path="res://assety/grafika/obiekty/kosmos/obiekty_kosmos/planet0.png" id="4_864jn"]
+[ext_resource type="Texture2D" uid="uid://tch0seeawvs4" path="res://assety/grafika/obiekty/kosmos/obiekty_kosmos/planet1.png" id="5_ep7g7"]
+
+[node name="Orapericus1" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(608.999, 359)
+scale = Vector2(1.40235, 0.893843)
+texture = ExtResource("1_23x6q")
+
+[node name="Lokalizacja" parent="." instance=ExtResource("2_nle2k")]
+offset_left = 166.0
+offset_top = 533.0
+offset_right = 166.0
+offset_bottom = 533.0
+metadata/Lokalizacja = 2
+
+[node name="slonce" type="Sprite2D" parent="."]
+position = Vector2(73, 69)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("3_adbm6")
+
+[node name="planeta" type="Sprite2D" parent="."]
+position = Vector2(1026.3, 166.6)
+rotation = 1.06291
+scale = Vector2(0.185607, 0.19385)
+texture = ExtResource("4_864jn")
+
+[node name="Lokalizacja2" parent="." instance=ExtResource("2_nle2k")]
+offset_left = 430.0
+offset_top = 496.0
+offset_right = 430.0
+offset_bottom = 496.0
+metadata/Lokalizacja = 3
+
+[node name="Lokalizacja3" parent="." instance=ExtResource("2_nle2k")]
+offset_left = 730.0
+offset_top = 428.0
+offset_right = 730.0
+offset_bottom = 428.0
+metadata/Lokalizacja = 4
+
+[node name="Lokalizacja4" parent="." instance=ExtResource("2_nle2k")]
+offset_left = 955.0
+offset_top = 531.0
+offset_right = 955.0
+offset_bottom = 531.0
+metadata/Lokalizacja = 5
+
+[node name="Lokalizacja5" parent="." instance=ExtResource("2_nle2k")]
+z_index = 5
+offset_left = 1101.0
+offset_top = 588.0
+offset_right = 1101.0
+offset_bottom = 588.0
+metadata/Lokalizacja = 6
+
+[node name="planeta2" type="Sprite2D" parent="."]
+position = Vector2(1198.65, 602.352)
+rotation = 1.06291
+scale = Vector2(0.274916, 0.249538)
+texture = ExtResource("5_ep7g7")

@@ -1,0 +1,21 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://d2vittq7fqqs7"]
+
+[sub_resource type="StyleBoxFlat" id="button_hover"]
+bg_color = Color(0.25, 0.35, 0.55, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="item_selected"]
+bg_color = Color(0.2, 0.4, 0.8, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[resource]
+Button/styles/hover = SubResource("button_hover")
+Button/styles/pressed = SubResource("button_hover")
+ItemList/colors/font_selected_color = Color(1, 1, 1, 1)
+ItemList/styles/selected = SubResource("item_selected")

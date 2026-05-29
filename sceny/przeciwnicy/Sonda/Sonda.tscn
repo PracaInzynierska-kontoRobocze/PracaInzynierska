@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://c4m2xx3pruxoi"]
+
+[ext_resource type="Script" uid="uid://jt213wp10p8q" path="res://sceny/przeciwnicy/Sonda/Sonda.cs" id="1_e02qd"]
+[ext_resource type="Texture2D" uid="uid://ddfwv6tpcnbpv" path="res://assety/grafika/obiekty/przeciwnicy/satelita.png" id="2_e02qd"]
+
+[node name="Sonda" type="CharacterBody2D"]
+script = ExtResource("1_e02qd")
+metadata/Nazwa = ""
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-9, 22.7824)
+scale = Vector2(0.695, 0.695)
+texture = ExtResource("2_e02qd")
+
+[node name="Button" type="Button" parent="."]
+modulate = Color(0.00392157, 0.00392157, 0.00392157, 0)
+offset_left = -148.0
+offset_top = -64.0
+offset_right = 138.0
+offset_bottom = 91.0
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

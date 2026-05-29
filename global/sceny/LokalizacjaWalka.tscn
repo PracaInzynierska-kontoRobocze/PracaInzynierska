@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://7dde8h4c5xpp"]
+
+[ext_resource type="Texture2D" uid="uid://bkdfsrwn6mfe1" path="res://assety/grafika/tła/placeholder_tło_k.png" id="1_jh3gi"]
+[ext_resource type="PackedScene" uid="uid://cyg82g4ylfyhl" path="res://UI/UI_Podczas_Walki/UI_Podczas_Walki.tscn" id="2_ych8t"]
+[ext_resource type="Script" uid="uid://brrvh4klf8scc" path="res://global/klasy/LokalizacjaWalka.cs" id="3_ych8t"]
+
+[node name="LokalizacjaWalka" type="Node2D"]
+script = ExtResource("3_ych8t")
+metadata/Lokalizacja = -1
+
+[node name="Tło" type="Sprite2D" parent="."]
+position = Vector2(640.5, 360)
+scale = Vector2(0.364595, 0.333642)
+texture = ExtResource("1_jh3gi")
+
+[node name="Tło2" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(623, 336)
+scale = Vector2(1.42702, 2.00927)
+texture = ExtResource("1_jh3gi")
+
+[node name="UI_Podczas_Walki" parent="." instance=ExtResource("2_ych8t")]
+
+[node name="Tura" type="Label" parent="."]
+offset_left = 629.0
+offset_top = 5.0
+offset_right = 669.0
+offset_bottom = 28.0
+text = "Tura: 1"

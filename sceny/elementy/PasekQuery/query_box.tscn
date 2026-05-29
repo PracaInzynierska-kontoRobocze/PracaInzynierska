@@ -1,0 +1,62 @@
+[gd_scene load_steps=7 format=3 uid="uid://jgglkbhp3w47"]
+
+[ext_resource type="Script" uid="uid://dppkcnuutuvx3" path="res://sceny/elementy/PasekQuery/QueryBox.cs" id="1_15h6u"]
+[ext_resource type="Theme" uid="uid://bbb4fve753tdp" path="res://UI/Motywy/QueryBox.tres" id="1_a1mxk"]
+[ext_resource type="PackedScene" uid="uid://bft1sjqmqpvq0" path="res://sceny/elementy/PasekQuery/query_select.tscn" id="1_joftd"]
+[ext_resource type="PackedScene" uid="uid://dimakvjsum0td" path="res://sceny/elementy/PasekQuery/query_update.tscn" id="3_gc1k4"]
+[ext_resource type="PackedScene" uid="uid://l1iekhbg6tu7" path="res://sceny/elementy/PasekQuery/query_delete.tscn" id="4_fgk84"]
+[ext_resource type="PackedScene" uid="uid://d2b673twfd0wv" path="res://sceny/elementy/PasekQuery/query_exec.tscn" id="6_i5w82"]
+
+[node name="QueryBox" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_a1mxk")
+script = ExtResource("1_15h6u")
+
+[node name="SelectContainer" parent="." instance=ExtResource("1_joftd")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 1280.0
+offset_bottom = 719.0
+grow_horizontal = 1
+grow_vertical = 1
+theme = ExtResource("1_a1mxk")
+
+[node name="UpdateContainer" parent="." instance=ExtResource("3_gc1k4")]
+visible = false
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 1280.0
+offset_bottom = 720.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="DeleteContainer" parent="." instance=ExtResource("4_fgk84")]
+visible = false
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 1280.0
+offset_bottom = 720.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="ExecContainer" parent="." instance=ExtResource("6_i5w82")]
+visible = false
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 1280.0
+offset_bottom = 720.0
+grow_horizontal = 1
+grow_vertical = 1

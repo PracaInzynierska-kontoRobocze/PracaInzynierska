@@ -1,0 +1,131 @@
+[gd_scene load_steps=3 format=3 uid="uid://m6s0onvin7fa"]
+
+[ext_resource type="Script" uid="uid://ct1qrxi7mijki" path="res://UI/Ustawienia/Ustawienia.cs" id="1_28vfc"]
+[ext_resource type="Theme" uid="uid://b5m7n8p2x4l6q" path="res://UI/Motywy/Global.tres" id="2_mwson"]
+
+[node name="Ustawienia" type="Control"]
+z_index = 4096
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_28vfc")
+
+[node name="TloNieprzezroczyste" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.02, 0.04, 0.08, 1)
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+theme = ExtResource("2_mwson")
+
+[node name="Tryb" type="ItemList" parent="Panel"]
+layout_mode = 0
+offset_left = 600.0
+offset_top = 60.0
+offset_right = 743.0
+offset_bottom = 129.0
+item_count = 2
+item_0/text = "Okno"
+item_1/text = "Pełny ekran"
+
+[node name="Button" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 300.0
+offset_top = 650.0
+offset_right = 519.0
+offset_bottom = 705.0
+text = "Zapisz"
+
+[node name="Button2" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 765.0
+offset_top = 650.0
+offset_right = 984.0
+offset_bottom = 705.0
+text = "Zamknij"
+
+[node name="Rozdzielczosc" type="ItemList" parent="Panel"]
+layout_mode = 0
+offset_left = 225.0
+offset_top = 60.0
+offset_right = 481.0
+offset_bottom = 152.0
+item_count = 12
+item_0/text = "2560x1440 (1440p)"
+item_1/text = "1920x1080 (1080p)"
+item_2/text = "1600x900"
+item_3/text = "1366x768"
+item_4/text = "1280x720 (720p)"
+item_5/text = "1920x1200"
+item_6/text = "1680x1050"
+item_7/text = "1440x900"
+item_8/text = "1280x800"
+item_9/text = "1280x960"
+item_10/text = "1024x768"
+item_11/text = "800x600"
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 60.0
+offset_right = 253.0
+offset_bottom = 110.0
+text = "Rozdzielczość:"
+
+[node name="Label2" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 550.0
+offset_top = 60.0
+offset_right = 629.0
+offset_bottom = 109.0
+text = "Tryb: "
+
+[node name="Label3" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 200.0
+offset_right = 212.0
+offset_bottom = 249.0
+text = "Podpowiedzi: "
+
+[node name="Podpowiedzi" type="ItemList" parent="Panel"]
+layout_mode = 0
+offset_left = 225.0
+offset_top = 200.0
+offset_right = 406.0
+offset_bottom = 263.0
+item_count = 2
+item_0/text = "Wł."
+item_1/text = "Wył."
+
+[node name="Label4" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 876.0
+offset_top = 70.0
+offset_right = 1209.0
+offset_bottom = 145.0
+text = "
+(naciśnięcie przywróci wszystkie okienka,
+które pojawiają się jednorazowo)"
+
+[node name="ResetButton" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 914.0
+offset_top = 60.0
+offset_right = 1139.0
+offset_bottom = 94.0
+text = "Zresetuj okna dialogowe"
+
+[connection signal="pressed" from="Panel/Button" to="." method="Zapisz"]
+[connection signal="pressed" from="Panel/Button2" to="." method="Zamknij"]
+[connection signal="pressed" from="Panel/ResetButton" to="." method="OnResetWiadomosciPressed"]

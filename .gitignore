@@ -1,0 +1,26 @@
+# Ignoruj lokalne ustawienia edytora
+.godot/
+.godot/imported/
+.import/
+
+# Ignoruj dane użytkownika
+.godot/
+.vs/
+SQL_Game.csproj.user
+
+# Ignoruj buildy i eksporty
+*.exe
+*.apk
+*.zip
+*.xcodeproj
+*.pck
+*.dmg
+*.app
+
+# Ignoruj pliki systemowe
+.DS_Store
+Thumbs.db
+
+# Ignoruj backupy edytora
+*.tmp
+*.bak

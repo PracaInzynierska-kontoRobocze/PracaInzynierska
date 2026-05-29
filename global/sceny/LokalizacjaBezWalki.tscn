@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://c63wj1chx1ipm"]
+
+[ext_resource type="PackedScene" uid="uid://dxvmdk3ygw1j7" path="res://UI/UI_Bez_Walki/UI_Bez_Walki.tscn" id="1_t6ho4"]
+[ext_resource type="Texture2D" uid="uid://bkdfsrwn6mfe1" path="res://assety/grafika/tła/placeholder_tło_k.png" id="2_rhqcl"]
+
+[node name="LokalizacjaBezWalki" type="Node2D"]
+
+[node name="UiBezWalki" parent="." instance=ExtResource("1_t6ho4")]
+
+[node name="Tło" type="Sprite2D" parent="."]
+position = Vector2(640.5, 360)
+scale = Vector2(0.364595, 0.333642)
+texture = ExtResource("2_rhqcl")

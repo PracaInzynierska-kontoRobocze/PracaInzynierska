@@ -1,0 +1,214 @@
+[gd_scene load_steps=3 format=3 uid="uid://cajxb8wq00jyf"]
+
+[ext_resource type="Script" uid="uid://nmvtt1adoi1t" path="res://UI/Pomoc/Pomoc.cs" id="1_pomoc"]
+[ext_resource type="Theme" uid="uid://b5m7n8p2x4l6q" path="res://UI/Motywy/Global.tres" id="2_mwson"]
+
+[node name="Pomoc" type="Control"]
+z_index = 4096
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_pomoc")
+
+[node name="TloNieprzezroczyste" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0156863, 0.0392157, 0.0784314, 0.960784)
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+theme = ExtResource("2_mwson")
+
+[node name="Zakladki" type="TabBar" parent="Panel"]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 20.0
+offset_right = 1230.0
+offset_bottom = 70.0
+current_tab = 0
+tab_count = 6
+tab_0/title = "1. SQL W WALCE"
+tab_1/title = "2. SELECT"
+tab_2/title = "3. UPDATE"
+tab_3/title = "4. DELETE"
+tab_4/title = "5. EXEC"
+tab_5/title = "6. LOGIKA I SKŁADNIA"
+
+[node name="Zawartosc" type="Control" parent="Panel"]
+anchors_preset = 0
+offset_left = 50.0
+offset_top = 90.0
+offset_right = 1230.0
+offset_bottom = 630.0
+
+[node name="Tab_Walka" type="RichTextLabel" parent="Panel/Zawartosc"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true
+text = "[b][font_size=36][color=yellow]Instrukcja Gry – SQL w Walce[/color][/font_size][/b]
+
+Walka w grze odbywa się w systemie turowym. Twój terminal to Twoja broń. Zamiast tradycyjnego oręża, używasz zapytań SQL, aby manipulować \"bazą danych\" przeciwnika i środowiska bitwy.
+
+[b][color=aqua]Jak Twoje komendy wpływają na pole bitwy:[/color][/b]
+
+• [b]SELECT (Zwiad):[/b] Sprawdzanie danych przeciwnika. Ułatwia późniejsze akcje.
+
+• [b]UPDATE (Atak / Osłabienie):[/b] Twój głowny sposób pokonywania poziomów. Pozwala edytować dane w tabelach .
+
+• [b]DELETE (Przełamanie):[/b] Pozwala całkowicie skasować dane. Jest poteżna, ale z tego powodu przeciwnicy często będą przed nią zabezpieczeni.
+
+• [b]EXEC (Zdolność Specjalna):[/b] Pozwala wywołać gotowe programy lub poprzez zmianę parametrów możesz obrócić broń przeciwnika przeciwko niemu.
+
+[i]Pamiętaj: Każda nieudana komenda (np. błąd składni) to zmarnowana tura, która zmniejsza twoje szanse na pokonanie poziomu![/i]"
+
+[node name="Tab_SELECT" type="RichTextLabel" parent="Panel/Zawartosc"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true
+text = "[b][font_size=36][color=yellow]SELECT – Odczytywanie danych[/color][/font_size][/b]
+
+To Twoje podstawowe narzędzie do rekonesansu. Pozwala przeglądać tabele bez ryzyka uszkodzenia danych.
+
+[b][color=aqua]Pola w Twoim terminalu:[/color][/b]
+• [color=aqua]kolumny:[/color] Tutaj decydujesz, jakie informacje Cię interesują. Jeśli chcesz zobaczyć wszystko, użyj gwiazdki [b](*)[/b]. Jeśli znasz nazwy kolumn, możesz wpisać np. [i]haslo, login[/i], aby ograniczyć wyniki.
+• [color=aqua]FROM (tabela):[/color] To nazwa \"segregatora\", do którego zaglądasz (np. [i]Przeciwnicy[/i], [i]Parametry[/i]).
+• [color=aqua]WHERE (warunek):[/color] Najważniejsza część filtrowania. Pozwala wyłowić konkretny rząd z tysięcy innych.
+
+[b][color=aqua]Przykład praktyczny:[/color][/b]
+[i]SELECT * FROM Drzwi WHERE status = 'zablokowane'[/i]
+To zapytanie pokaże Ci listę wszystkich drzwi w obiekcie, których nie możesz obecnie otworzyć."
+
+[node name="Tab_UPDATE" type="RichTextLabel" parent="Panel/Zawartosc"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true
+text = "[b][font_size=36][color=orange]UPDATE – Modyfikacja danych[/color][/font_size][/b]
+
+Polecenie UPDATE służy do nadpisywania informacji. Jest to kluczowe, gdy chcesz zmienić wartość jakiegoś parametru przeciwnika np. status='pokonany' (o ile byłoby to takie proste).
+
+[b][color=aqua]Jak to działa:[/color][/b]
+• [color=aqua]tabela:[/color] Wybierasz miejsce, w którym chcesz dokonać zmiany.
+• [color=aqua]SET (kolumna) = (wartość):[/color] Tutaj wskazujesz, co zmieniasz i na co. Możesz np. ustawić kolumnę [i]alarm[/i] na wartość [i]0[/i].
+• [color=aqua]WHERE:[/color] Klucz do precyzji. Jeśli go pominiesz lub wpiszesz [i]1=1[/i], zmiana zostanie wprowadzona w [b]każdym[/b] rzędzie tabeli.
+
+[b][color=orange]Dobra rada:[/color][/b] Przed wykonaniem UPDATE, warto zrobić SELECT z tym samym warunkiem WHERE, aby upewnić się, że zmienisz dokładnie ten wiersz, o który Ci chodzi."
+
+[node name="Tab_DELETE" type="RichTextLabel" parent="Panel/Zawartosc"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true
+text = "[b][font_size=36][color=red]DELETE – Usuwanie informacji[/color][/font_size][/b]
+
+Komenda DELETE służy do trwałego kasowania całych wierszy z tabeli. Pozwala ona trwale pozbyć się jakiejś informacji z systemu, co sprawia, że jest ona równie potężna, co niebezpieczna. Jedno przeoczenie i może dojść do sytuacji, której ktoś będzie bardzo żałował (albo Ty, albo Twój przeciwnik).
+
+[b][color=aqua]Parametry:[/color][/b]
+• [color=aqua]tabela:[/color] Nazwa tabeli, z której chcesz się pozbyć danych.
+• [color=aqua]WHERE:[/color] Kryterium usunięcia. 
+
+[b][color=red]Ostrzeżenie:[/color][/b] DELETE może być nieodwracalne. Wiele systemów posiada \"bezpieczniki\", które blokują masowe usuwanie danych (użycie [i]1=1[/i]),  zawsze staraj się celować w konkretne identyfikatory (np. [i]WHERE id = 502[/i]) i poprzedź DELETE robieniem SELECT dla tych samych warunków.
+"
+
+[node name="Tab_EXEC" type="RichTextLabel" parent="Panel/Zawartosc"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true
+text = "[b][font_size=36][color=magenta]EXEC – Uruchamianie procedur[/color][/font_size][/b]
+
+EXEC (skrót od Execute) służy do uruchamiania tzw. procedur składowanych. Są to gotowe programy zapisane w bazie danych, które wykonują serię skomplikowanych operacji za jednym kliknięciem.
+
+[b][color=aqua]Zastosowanie:[/color][/b]
+• [color=aqua]procedura:[/color] Nazwa funkcji, którą chcesz wywołać. Często mają one nazwy sugerujące działanie, np. [i]Reboot_System[/i] lub [i]Otworz_Glowne_Wjscie[/i].
+• [color=aqua]parametry:[/color] Niektóre procedury wymagają dodatkowych informacji w nawiasach. Jeśli procedura wymaga np. numeru sektora i hasła, wpisujesz je oddzielone przecinkami: [i]('Sektor_C', 'admin123')[/i].
+
+Jeśli procedura nie wymaga parametrów, pole to można zostawić puste [i]()[/i]."
+
+[node name="Tab_Logika" type="RichTextLabel" parent="Panel/Zawartosc"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true
+text = "[b][font_size=36][color=yellow]Logika i Składnia – Niezbędnik[/color][/font_size][/b]
+
+Aby system poprawnie zrozumiał Twoje polecenie, musisz trzymać się kilku żelaznych zasad składni SQL.
+
+[b]1. Operatory Logiczne (przycisk +)[/b]
+Kiedy jeden warunek to za mało, możesz je łączyć:
+• [color=aqua]AND:[/color] Oba warunki muszą być prawdziwe. Przykład: [i]kolor = 'zielony' AND typ = 'karta'[/i].
+• [color=aqua]OR:[/color] Wystarczy, że jeden warunek jest prawdziwy. Przykład: [i]id = 1 OR id = 2[/i].
+
+[b]2. Szukanie niepełnych nazw (LIKE)[/b]
+Jeśli nie znasz dokładnej nazwy, użyj operatora [color=aqua]LIKE[/color] i symbolu [color=aqua]%[/color]:
+• [i]LIKE 'Admin%'[/i] – wszystko zaczynające się na Admin.
+• [i]LIKE '%tajne%'[/i] – wszystko, co zawiera w sobie słowo \"tajne\".
+
+[b]3. Apostrofy i Liczby[/b]
+To najczęstsza przyczyna błędów:
+• [color=orange]Tekst[/color] zawsze zamykamy w apostrofach: [b]'Tekst'[/b].
+• [color=orange]Liczby[/color] piszemy czysto: [b]100[/b], [b]0[/b], [b]5[/b].
+[i]Błąd: id = '5' (Liczba to nie tekst).[/i]"
+
+[node name="LewoButton" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 400.0
+offset_top = 650.0
+offset_right = 470.0
+offset_bottom = 705.0
+text = "<"
+
+[node name="ZamknijButton" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 530.0
+offset_top = 650.0
+offset_right = 750.0
+offset_bottom = 705.0
+text = "ZAMKNIJ"
+
+[node name="PrawoButton" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 810.0
+offset_top = 650.0
+offset_right = 880.0
+offset_bottom = 705.0
+text = ">"
+
+[connection signal="tab_clicked" from="Panel/Zakladki" to="." method="OnZakladkaZmieniona"]
+[connection signal="pressed" from="Panel/LewoButton" to="." method="OnLewoPressed"]
+[connection signal="pressed" from="Panel/ZamknijButton" to="." method="Zamknij"]
+[connection signal="pressed" from="Panel/PrawoButton" to="." method="OnPrawoPressed"]

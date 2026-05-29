@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://ydosyfwrqhhd"]
+
+[ext_resource type="Script" uid="uid://1xr8ip8vtl88" path="res://sceny/przeciwnicy/StatekZwiadowczy/StatekZwiadowczy.cs" id="1_ghxin"]
+[ext_resource type="Texture2D" uid="uid://dawjfmpokuxa3" path="res://assety/grafika/obiekty/przeciwnicy/spaceship.png" id="2_kk24y"]
+
+[node name="StatekZwiadowczy" type="CharacterBody2D"]
+script = ExtResource("1_ghxin")
+metadata/Nazwa = "StatekZwiadowczy"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(9, 78)
+rotation = -1.5708
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_kk24y")
+
+[node name="Button" type="Button" parent="."]
+modulate = Color(0.00392157, 0.00392157, 0.00392157, 0)
+offset_left = -54.0
+offset_top = 32.0
+offset_right = 73.0
+offset_bottom = 125.0
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

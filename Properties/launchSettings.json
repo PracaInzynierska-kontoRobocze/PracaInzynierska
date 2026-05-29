@@ -1,0 +1,17 @@
+{
+  "profiles": {
+    "SQL_Game": {
+      "commandName": "Project"
+    },
+    "Kryspin": {
+      "commandName": "Executable",
+      "executablePath": "C:\\Godot_v4.4.1-stable_mono_win64\\Godot_v4.4.1-stable_mono_win64.exe",
+      "workingDirectory": "C:\\Users\\Pipin\\Documents\\sql_game"
+    },
+    "Kuba": {
+      "commandName": "Executable",
+      "executablePath": "F:\\Godot_v4.4.1-stable_mono_win64\\Godot_v4.4.1-stable_mono_win64.exe",
+      "workingDirectory": "F:\\GameDev\\sql_game"
+    }
+  }
+}

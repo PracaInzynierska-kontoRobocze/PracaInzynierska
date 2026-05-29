@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://cyg82g4ylfyhl"]
+
+[ext_resource type="PackedScene" uid="uid://jgglkbhp3w47" path="res://sceny/elementy/PasekQuery/query_box.tscn" id="2_hmk7s"]
+
+[node name="UI_Podczas_Walki" type="Control"]
+z_index = 100
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="QueryBox" parent="." instance=ExtResource("2_hmk7s")]
+layout_mode = 1

@@ -1,0 +1,136 @@
+[gd_resource type="Theme" load_steps=13 format=3 uid="uid://b5m7n8p2x4l6q"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_focus"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btn_h"]
+bg_color = Color(0, 1, 1, 0.12)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 1, 1, 1)
+corner_radius_top_left = 2
+corner_radius_bottom_right = 2
+shadow_color = Color(0, 1, 1, 0.2)
+shadow_size = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btn_n"]
+bg_color = Color(0.05, 0.07, 0.1, 0.6)
+border_width_bottom = 2
+border_color = Color(0, 0.4, 0.5, 1)
+corner_radius_top_left = 2
+corner_radius_bottom_right = 2
+expand_margin_left = 4.0
+expand_margin_right = 4.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btn_p"]
+bg_color = Color(0, 0.6, 0.6, 0.3)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_itemlist_hov"]
+bg_color = Color(0, 0.15, 0.25, 0.4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_itemlist_bg"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0.02, 0.03, 0.05, 0.7)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0.4, 0.5, 0.8)
+corner_radius_top_left = 4
+corner_radius_bottom_right = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_itemlist_sel"]
+bg_color = Color(0, 0.3, 0.4, 0.6)
+border_width_left = 3
+border_color = Color(0, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_line_edit"]
+content_margin_left = 10.0
+bg_color = Color(0, 0, 0, 0.3)
+border_width_bottom = 1
+border_color = Color(0, 1, 1, 0.5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_panel"]
+bg_color = Color(0.02, 0.04, 0.08, 0.85)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 1, 1, 0.3)
+corner_radius_top_left = 10
+corner_radius_bottom_right = 10
+shadow_color = Color(0, 0, 0, 0.5)
+shadow_size = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_popup"]
+bg_color = Color(0.05, 0.07, 0.1, 0.95)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 1, 1, 0.5)
+corner_radius_top_left = 2
+corner_radius_bottom_right = 2
+shadow_color = Color(0, 0, 0, 0.5)
+shadow_size = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tab_selected"]
+content_margin_left = 15.0
+content_margin_right = 15.0
+bg_color = Color(0, 0.15, 0.2, 1)
+border_width_top = 2
+border_color = Color(0, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tab_unselected"]
+content_margin_left = 10.0
+content_margin_right = 10.0
+bg_color = Color(0.05, 0.05, 0.05, 0.7)
+
+[resource]
+default_font_size = 16
+Button/colors/font_color = Color(0, 1, 1, 0.8)
+Button/colors/font_hover_color = Color(1, 1, 1, 1)
+Button/styles/focus = SubResource("StyleBoxEmpty_focus")
+Button/styles/hover = SubResource("StyleBoxFlat_btn_h")
+Button/styles/normal = SubResource("StyleBoxFlat_btn_n")
+Button/styles/pressed = SubResource("StyleBoxFlat_btn_p")
+ItemList/colors/font_color = Color(0.85, 0.9, 1, 0.8)
+ItemList/colors/font_hovered_color = Color(1, 1, 1, 1)
+ItemList/colors/font_selected_color = Color(0, 1, 1, 1)
+ItemList/styles/focus = SubResource("StyleBoxEmpty_focus")
+ItemList/styles/hovered = SubResource("StyleBoxFlat_itemlist_hov")
+ItemList/styles/panel = SubResource("StyleBoxFlat_itemlist_bg")
+ItemList/styles/selected = SubResource("StyleBoxFlat_itemlist_sel")
+ItemList/styles/selected_focus = SubResource("StyleBoxFlat_itemlist_sel")
+Label/colors/font_color = Color(0.85, 0.9, 1, 1)
+Label/colors/font_shadow_color = Color(0, 0, 0, 0.5)
+Label/constants/shadow_offset_x = 1
+Label/constants/shadow_offset_y = 1
+LineEdit/colors/font_color = Color(1, 1, 1, 1)
+LineEdit/styles/focus = SubResource("StyleBoxFlat_line_edit")
+LineEdit/styles/normal = SubResource("StyleBoxFlat_line_edit")
+LineEdit/styles/read_only = SubResource("StyleBoxFlat_line_edit")
+OptionButton/styles/focus = SubResource("StyleBoxEmpty_focus")
+OptionButton/styles/hover = SubResource("StyleBoxFlat_btn_h")
+OptionButton/styles/normal = SubResource("StyleBoxFlat_btn_n")
+OptionButton/styles/pressed = SubResource("StyleBoxFlat_btn_p")
+Panel/styles/panel = SubResource("StyleBoxFlat_panel")
+PopupMenu/colors/font_color = Color(0.85, 0.9, 1, 0.8)
+PopupMenu/colors/font_hover_color = Color(1, 1, 1, 1)
+PopupMenu/styles/focus = SubResource("StyleBoxEmpty_focus")
+PopupMenu/styles/hover = SubResource("StyleBoxFlat_itemlist_sel")
+PopupMenu/styles/panel = SubResource("StyleBoxFlat_popup")
+ProgressBar/styles/background = SubResource("StyleBoxFlat_btn_n")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_btn_h")
+TabContainer/styles/panel = SubResource("StyleBoxFlat_panel")
+TabContainer/styles/tab_selected = SubResource("StyleBoxFlat_tab_selected")
+TabContainer/styles/tab_unselected = SubResource("StyleBoxFlat_tab_unselected")

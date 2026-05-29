@@ -1,0 +1,136 @@
+[gd_scene load_steps=2 format=3 uid="uid://ddhygkkov67y7"]
+
+[ext_resource type="Script" uid="uid://cdwgfg0n1pkrw" path="res://global/skrypty/Debug.cs" id="1_i3gmo"]
+
+[node name="Debug" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_i3gmo")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 235.0
+offset_top = 62.0
+offset_right = 977.0
+offset_bottom = 577.0
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 29.0
+offset_right = 125.0
+offset_bottom = 61.0
+text = "Poziom Selecta"
+
+[node name="SelectPoziom" type="LineEdit" parent="Panel"]
+layout_mode = 0
+offset_left = 135.0
+offset_top = 24.0
+offset_right = 209.0
+offset_bottom = 60.0
+
+[node name="Button" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 318.0
+offset_top = 473.0
+offset_right = 434.0
+offset_bottom = 504.0
+text = "Zapisz zmiany"
+
+[node name="Button2" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 702.0
+offset_top = 3.0
+offset_right = 733.0
+offset_bottom = 27.0
+text = "X"
+
+[node name="Label2" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 90.0
+offset_right = 88.0
+offset_bottom = 113.0
+text = "Rozdzielczość"
+
+[node name="Roz1" type="LineEdit" parent="Panel"]
+layout_mode = 0
+offset_left = 134.0
+offset_top = 87.0
+offset_right = 202.563
+offset_bottom = 118.0
+
+[node name="Roz2" type="LineEdit" parent="Panel"]
+layout_mode = 0
+offset_left = 234.0
+offset_top = 86.0
+offset_right = 302.563
+offset_bottom = 117.0
+
+[node name="Label3" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 212.0
+offset_top = 93.0
+offset_right = 234.0
+offset_bottom = 116.0
+text = "x"
+
+[node name="Full" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 413.0
+offset_top = 85.0
+offset_right = 474.0
+offset_bottom = 118.0
+text = "Pełny ekran"
+
+[node name="Win" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 537.0
+offset_top = 84.0
+offset_right = 637.0
+offset_bottom = 117.0
+text = "Okno"
+
+[node name="Zapis" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 617.0
+offset_top = 160.0
+offset_right = 705.0
+offset_bottom = 199.0
+text = "Zapis"
+
+[node name="Label4" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 457.0
+offset_top = 167.0
+offset_right = 613.0
+offset_bottom = 190.0
+text = "Zapis manualny gry:"
+
+[node name="Zalicz" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 160.0
+offset_right = 180.0
+offset_bottom = 200.0
+text = "Zalicz Poziom"
+
+[node name="Button3" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 221.0
+offset_right = 65.0
+offset_bottom = 261.0
+text = "PokażPanelKoniecPoziomu"
+
+[connection signal="pressed" from="Panel/Button" to="." method="Save"]
+[connection signal="pressed" from="Panel/Button2" to="." method="Close"]
+[connection signal="pressed" from="Panel/Full" to="." method="_on_full_pressed"]
+[connection signal="pressed" from="Panel/Win" to="." method="_on_win_pressed"]
+[connection signal="pressed" from="Panel/Zapis" to="." method="ZapisManual"]
+[connection signal="pressed" from="Panel/Zalicz" to="." method="ZaliczObecnyPoziom"]
+[connection signal="pressed" from="Panel/Button3" to="." method="PokazPanel"]
